@@ -1,9 +1,9 @@
 #!/usr/bin/php
 <?php
 unset($argv[0]);
-sort($argv);
+$string = implode(" ",$argv);
+$tab = explode(" ", $string);
+sort($tab);
 $i = -1;
-while ($argv[++$i])
-{
-	echo $argv[$i]."\n";
-}
+while ($tab[++$i])
+	echo $tab[$i]."\n";
