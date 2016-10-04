@@ -10,9 +10,9 @@ $num = [];
 $rest = [];
 while ($tab[++$i])
 {
-	if (!preg_match('/[^A-Za-z]/', $tab[$i]))
+	if (!preg_match('/[^A-Za-z]/', $tab[$i][0]))
 		array_push($alpha, $tab[$i]);
-	else if (is_numeric($tab[$i]))
+	else if (is_numeric($tab[$i])[0])
 		array_push($num, $tab[$i]);
 	else
 		array_push($rest, $tab[$i]);
