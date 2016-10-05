@@ -1,6 +1,6 @@
 #!/usr/bin/php
 <?php
-$tab = explode(" ", $argv[1]);
+$tab = explode(" ", rtrim(ltrim(preg_replace("/\s\s+/", " ", $argv[1]))));
 $tmp = $tab[0];
 unset($tab[0]);
 array_push($tab, $tmp);

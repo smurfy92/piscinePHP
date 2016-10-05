@@ -21,3 +21,4 @@ while (!feof($handle))
 			echo "^D\n";
 	}
 }
+fclose($handle);
