@@ -1,0 +1,1 @@
+SELECT nbr_siege AS `nb_court-metrage` FROM film WHERE duree_min <= 42;

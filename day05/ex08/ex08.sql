@@ -1,0 +1,1 @@
+SELECT nom, prenom, date_naissance AS `date_de_naissance` FROM fiche_personne WHERE year(date_naissance) = 1989 ORDER by nom ASC;
