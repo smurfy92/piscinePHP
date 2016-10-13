@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Balloon</title>
+	<style>
+		.balloon{
+			width:200px;
+			height:200px;
+			background-color:red;
+			border-radius:100px;
+			margin:0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="balloon" onmouseout="diminue(this);" onclick="augmente();" class="balloon" ></div>
+	<script>
+
+		function augmente(elem){
+			var width = elem.offsetWidth + 10;
+			var height = elem.offsetHeight + 10;
+			var style = window.getComputedStyle(elem);
+			var back = style.getPropertyValue("background-color");
+			if (back === "rgb(255, 0, 0)")
+				back = "rgb(0, 255, 0)";
+			else if (back === "rgb(0, 255, 0)")
+				back = "rgb(0, 0, 255)";
+			else if (back === "rgb(0, 0, 255)")
+				back = "rgb(255, 0, 0)";
+			if (width > 420 || height > 420)
+			{
+				height = 200;
+				width = 200;
+			}
+			elem.setAttribute("style","width:"+width+"px;height:"+height+"px;border-radius:"+width/2+"px;background-color:"+back+";");
+		}
+
+		function diminue(elem)
+		{
+			var width = elem.offsetWidth - 5;
+			var height = elem.offsetHeight - 5;
+			var style = window.getComputedStyle(elem);
+			var back = style.getPropertyValue("background-color");
+			if (back === "rgb(255, 0, 0)")
+				back = "rgb(0, 0, 255)";
+			else if (back === "rgb(0, 255, 0)")
+				back = "rgb(255, 0, 0)";
+			else if (back === "rgb(0, 0, 255)")
+				back = "rgb(0, 255, 0)";
+			if (width < 200 || height < 200)
+			{
+				height = 200;
+				width = 200;
+			}
+			elem.setAttribute("style","width:"+width+"px;height:"+height+"px;border-radius:"+width/2+"px;background-color:"+back+";");
+		}
+	</script>
+</body>
+</html>
