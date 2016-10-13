@@ -1,1 +1,1 @@
-SELECT REVERSE(telephone) AS `enohpelet` FROM distrib WHERE telephone LIKE "05%";
+SELECT REVERSE(telephone) AS `enohpelet` FROM `db_jtranchi`.distrib WHERE telephone LIKE "05%";

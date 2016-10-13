@@ -1,1 +1,1 @@
-DELETE FROM ft_table WHERE id <= 5;
+DELETE FROM `db_jtranchi`.`ft_table` WHERE id <= 5;

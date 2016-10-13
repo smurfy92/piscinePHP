@@ -1,1 +1,1 @@
-SELECT etage_salle AS `etage` , SUM(nbr_siege) AS `sieges` FROM salle GROUP BY etage_salle;
+SELECT etage_salle AS `etage` , SUM(nbr_siege) AS `sieges` FROM `db_jtranchi`.salle GROUP BY etage_salle;

@@ -1,1 +1,1 @@
-SELECT nbr_siege AS `nb_court-metrage` FROM film WHERE duree_min <= 42;
+SELECT count(*) AS `nb_court-metrage` FROM `db_jtranchi`.`film` WHERE duree_min <= 42;
