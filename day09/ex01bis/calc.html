@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>calculatrice</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<input type="text" id="value1">
+	<select name="select" id="select">
+		<option value="+">+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+		<option value="%">%</option>
+	</select>
+	<input type="text" id="value2">
+	<input class="submit" type="submit" value="Try me!">
+	<script>
+		$(document).ready(function() {
+			$(".submit").click(function(){
+				var op = $("#select").val();
+				var value1 = Number($("#value1").val());
+				var value2 = Number($("#value2").val());
+				if (!$.isNumeric(value1) || !$.isNumeric(value2) || value1 < 0 || value2 < 0 )
+				{
+					console.log("Error :(");
+					alert("Error :(");
+				}
+				else
+				{
+					var result;
+					if (op == "+")
+						result = value1 + value2;
+					else if (op == "-")
+						result = value1 - value2;
+					else if (op == "*")
+						result = value1 * value2;
+					else if (op == "%")
+					{
+						if (value2 == "0")
+							result = "It’s over 9000!";
+						else
+							result = value1 % value2;
+					}
+					else if (op == "/")
+					{
+						if (value2 == "0")
+							result = "It’s over 9000!";
+						else
+							result = value1 / value2;
+					}
+					console.log(result);
+					alert(result);
+				}
+			})
+		});
+		setInterval(function(){ alert("Please, use me..."); }, 30000);
+	</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Balloon</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+<style>
+		.balloon{
+			width:200px;
+			height:200px;
+			background-color:red;
+			border-radius:100px;
+			margin:0 auto;
+		}
+	</style>
+	<div class="balloon" ></div>
+	<script>
+		$(document).ready(function() {
+			$(".balloon").click(function(){
+				var width = $(".balloon").width() + 10;
+				var height = $(".balloon").height() + 10;
+				var color = $(".balloon").css("background-color");
+				if (color === "rgb(255, 0, 0)")
+					color = "rgb(0, 255, 0)";
+				else if (color === "rgb(0, 255, 0)")
+					color = "rgb(0, 0, 255)";
+				else if (color === "rgb(0, 0, 255)")
+					color = "rgb(255, 0, 0)";
+				if (width > 420 || height > 420)
+				{
+					height = 200;
+					width = 200;
+				}
+				$(".balloon").css("background-color", color);
+				$(".balloon").css("width", width+"px");
+				$(".balloon").css("height", height+"px");
+				$(".balloon").css("border-radius", height/2+"px");
+			});
+			$(".balloon").mouseout(function(){
+				var width = $(".balloon").width() - 5;
+				var height = $(".balloon").height() - 5;
+				var color = $(".balloon").css("background-color");
+				if (color === "rgb(255, 0, 0)")
+					color = "rgb(0, 0, 255)";
+				else if (color === "rgb(0, 255, 0)")
+					color = "rgb(255, 0, 0)";
+				else if (color === "rgb(0, 0, 255)")
+					color = "rgb(0, 255, 0)";
+				if (width < 200 || height < 200)
+				{
+					height = 200;
+					width = 200;
+				}
+				$(".balloon").css("background-color", color);
+				$(".balloon").css("width", width+"px");
+				$(".balloon").css("height", height+"px");
+				$(".balloon").css("border-radius", height/2+"px");
+			});
+		});
+	</script>
+</body>
+</html>

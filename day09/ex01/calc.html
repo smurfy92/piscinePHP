@@ -23,7 +23,7 @@
 		var select = document.getElementById("select");
 		var option = select.options[select.selectedIndex].value;
 		var result;
-		if (!Number.isInteger(Number(value1)) || !Number.isInteger(Number(value1)))
+		if (!Number.isInteger(Number(value1)) || !Number.isInteger(Number(value2)) || Number(value2) < 0 || Number(value1) < 0)
 		{
 			console.log("Error :(");
 			alert("Error :(");
@@ -55,8 +55,8 @@
 			console.log(result);
 			alert(result);
 		}
-
 	}
+	setInterval(function(){ alert("Please, use me..."); }, 30000);
 
 	</script>
 </body>
